@@ -819,7 +819,7 @@ function updateLoadingProgress() {
 function loadPNG(rgbaUrl) {
   const rgbaPromise = fetch(rgbaUrl, {
                         method: 'GET',
-                        mode: 'cors',
+                        mode: 'same-origin',
                       }).then(response => {
     return response.arrayBuffer();
   }).then(buffer => {
@@ -1027,7 +1027,7 @@ function loadScene(dirUrl, width, height) {
       'scene_params.json';
   let sceneParamsPromise = fetch(sceneParamsUrl, {
                              method: 'GET',
-                             mode: 'cors',
+                             mode: 'same-origin',
                            }).then(response => {
     return response.json();
   });
